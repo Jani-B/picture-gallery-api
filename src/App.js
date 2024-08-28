@@ -8,18 +8,28 @@ import { useState, useEffect } from "react";
 function App() {
   const [artist, setArtist] = useState([{ id: 30, author: "test" }]); //This should take in the artist from the Api call and display them
   const [chosenArtist, setChosenArtist] = useState("all"); //this is to keep track on the chosen artist to show the pictures
-  const [artistData, setArtistData] = useState();
+  const [artistData, setArtistData] = useState([
+    {
+      id: "30",
+      author: "Shyamanta Baruah",
+      width: 1280,
+      height: 901,
+      url: "https://unsplash.com/photos/aeVA-j1y2BY",
+      image: "../mock_picture.jpg",
+    },
+  ]); //empty the usestate when ready!!!!!
 
   console.log(chosenArtist); //remove after ready!!!!!
   //console.log(artistData);
 
-  useEffect(() => {
-    const checkApiData = async () => {
-      let apidataCheck = await apiData();
-      setArtistData(apidataCheck);
-    };
-    checkApiData();
-  }, []);
+  //UNCOMMENT WHEN DESIGN IS READY!
+  //useEffect(() => {
+  //  const checkApiData = async () => {
+  //    let apidataCheck = await apiData();
+  //    setArtistData(apidataCheck);
+  //  };
+  //  checkApiData();
+  //}, []);
 
   console.log(artistData);
 

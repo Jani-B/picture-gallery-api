@@ -1,5 +1,6 @@
 const apiData = async () => {
-  const url = "https://picsum.photos/v2/list?page=2&limit=100.json";
+  const url = "https://picsum.photos/v2/list?page=2&limit=10.json";
+  const url2 = "../mockdata.json";
 
   try {
     const response = await fetch(url);
@@ -7,9 +8,6 @@ const apiData = async () => {
       throw new Error(response.status);
     }
     const json = await response.json();
-
-    const author = json[0].author;
-    console.log(author);
 
     return json.map((data) => ({
       id: data.id,

@@ -7,7 +7,7 @@ export default function Photos({ artistDataGiven }) {
     return (
       <>
         <div>
-          <h3>Authors</h3>
+          <h3>Artists</h3>
 
           {artistDataGiven.map((info) => (
             <div key={`div ${info.id}`}>
