@@ -13,7 +13,9 @@ export default function Photos({ artistDataGiven }) {
           <div className={styles.cardContainer}>
             {artistDataGiven.map((info) => (
               <div key={`div ${info.id}`} className={styles.card}>
-                <p key={info.id}>{info.author}</p>
+                <p className={styles.author} key={info.id}>
+                  {info.author}
+                </p>
                 <img src={info.image} alt="" height={200} width={200}></img>
                 <p>
                   <a href={info.url} target="_blank">
