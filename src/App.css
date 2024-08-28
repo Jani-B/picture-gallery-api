@@ -1,3 +1,18 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 8rem 1rem;
+  background-color: rgba(24, 98, 235, 0.486);
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header h2 {
+  font-size: 1rem;
 }

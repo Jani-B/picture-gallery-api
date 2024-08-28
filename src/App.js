@@ -23,6 +23,7 @@ function App() {
   //console.log(artistData);
 
   //UNCOMMENT WHEN DESIGN IS READY!
+
   //useEffect(() => {
   //  const checkApiData = async () => {
   //    let apidataCheck = await apiData();
@@ -31,18 +32,15 @@ function App() {
   //  checkApiData();
   //}, []);
 
-  console.log(artistData);
-
   return (
     <div className="App">
       <header className="App-header">
         <h1>Image Gallery API</h1>
         <h2>This page is only practice site for API data</h2>
-        <Artists artist={artist} chooseArtist={setChosenArtist} />
-        <Photos artistDataGiven={artistData} />
-        <button>Clcik</button>
       </header>
-      <main></main>
+      <main>
+        <Photos artistDataGiven={artistData} />
+      </main>
     </div>
   );
 }
