@@ -13,6 +13,7 @@ const apiData = async () => {
       id: data.id,
       author: data.author,
       image: data.download_url,
+      url: url,
     }));
   } catch (error) {
     console.error(error.message);
