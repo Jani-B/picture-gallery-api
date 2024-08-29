@@ -1,15 +1,12 @@
 import "./App.css";
-import Artists from "./components/Artists";
 import Photos from "./components/Photos";
 import apiData from "./components/ApiData";
 import { useState, useEffect } from "react";
 //remember to add a function to check artist
 
 function App() {
-  const [artist, setArtist] = useState([{ id: 30, author: "test" }]); //This should take in the artist from the Api call and display them
-  const [chosenArtist, setChosenArtist] = useState("all"); //this is to keep track on the chosen artist to show the pictures
   const [artistData, setArtistData] = useState(); //empty the usestate when ready!!!!!
-
+  const [isLoading, setIsLoading] = useState(true);
   //[
   //{
   //id: "30",
@@ -20,14 +17,16 @@ function App() {
   //image: "../mock_picture.jpg",
   //},
   //]
-  //UNCOMMENT WHEN DESIGN IS READY!
 
+  //UNCOMMENT WHEN DESIGN IS READY!
   useEffect(() => {
+    setIsLoading(true);
     const checkApiData = async () => {
       let apidataCheck = await apiData();
       setArtistData(apidataCheck);
     };
     checkApiData();
+    setIsLoading(false);
   }, []);
 
   return (
@@ -35,9 +34,10 @@ function App() {
       <header className="App-header">
         <h1>Image Gallery API</h1>
         <h2>This page is only practice site for API data</h2>
+        <h2>From Picsum photos</h2>
       </header>
       <main>
-        <Photos artistDataGiven={artistData} />
+        <Photos artistDataGiven={artistData} isLoading={isLoading} />
       </main>
     </div>
   );

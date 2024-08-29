@@ -6,13 +6,19 @@
 
 header {
   padding: 8rem 1rem;
-  background-color: rgba(24, 98, 235, 0.486);
+  /*background-image: url("../public/background.jpg");*/
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header h1 {
   font-size: 3rem;
+  color: white;
 }
 
 header h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: white;
 }

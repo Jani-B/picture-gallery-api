@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "./Photos.module.css";
 
-export default function Photos({ artistDataGiven }) {
+export default function Photos({ artistDataGiven, isLoading }) {
   //Here we add the photos of the chosen artist from the api call.
   //have to make it ready. Currently nothing here
+
+  if (isLoading) {
+    return <p className={styles.loading}>Loading...</p>;
+  }
 
   if (artistDataGiven) {
     return (
@@ -18,7 +22,7 @@ export default function Photos({ artistDataGiven }) {
                 </p>
                 <img src={info.image} alt="" height={200} width={200}></img>
                 <p>
-                  <a href={info.url} target="_blank">
+                  <a href={info.url} target="_blank" rel="noopener noreferrer">
                     Check it in Unsplash
                   </a>
                 </p>
